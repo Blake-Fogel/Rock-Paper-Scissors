@@ -9,3 +9,20 @@ function getComputerChoice() {
     */
     return ["Rock","Paper","Scissors"][(Math.random() * 3) | 0]
 }
+/* 
+    Get human choice.
+    Keep prompting until the choice is valid.
+*/
+function getHumanChoice() {
+    /* 
+        Create an empty initial variable
+        Enter the do while and set the variable equal to use input
+        check that user input against a regex and if it doesn't match
+        the regex will return zero and continue looping
+    */
+    let humanChoice;
+    do {
+        humanChoice = prompt("Do you choose rock, paper, or scissors?");
+    } while (!(/^(Rock)|(Paper)|(Scissors)$/i.test(humanChoice)));
+
+}
