@@ -15,10 +15,11 @@ function getComputerChoice() {
 */
 function getHumanChoice() {
     /* 
-        Create an empty initial variable
+        Create an empty initial variable.
         Enter the do while and set the variable equal to use input
         check that user input against a regex and if it doesn't match
-        the regex will return zero and continue looping
+        the regex will return zero and continue looping.
+        The regex is case insensitive
     */
     let humanChoice;
     do {
