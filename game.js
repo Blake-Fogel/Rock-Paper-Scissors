@@ -32,3 +32,35 @@ function getHumanChoice() {
     } while (!(/^(Rock)|(Paper)|(Scissors)$/i.test(humanChoice)));
 
 }
+/* 
+    this function will take in computer choice
+    and human choice then determine who won
+*/
+function playRound(humanChoice, computerChoice) {
+    /* 
+        I know that only one other choice can be beaten per option.
+        I am checking to see if the computer choice is that one case.
+        If not, then the player loses.
+    */
+    function isComputerBeatable(beatableComputerChoice) {
+        if (computerChoice===beatableComputerChoice) {
+            humanScore += 1;
+            return `You win! ${humanChoice}-${humanScore} beats ${computerChoice}-${computerScore}`;
+        } else {
+            computerScore += 1;
+            return `You lose! ${humanChoice}-${humanScore} beats ${computerChoice}-${computerScore}`;
+        }
+    }
+    //pass in the correct beatable value for what the user chose
+    switch (humanChoice.toLowerCase()) {
+        case "rock":
+            return isComputerBeatable("scissors");
+            break;
+        case "scissors":
+            return isComputerBeatable("paper");
+            break;
+        case "paper":
+            return isComputerBeatable("rock");
+            break;
+    }
+}
