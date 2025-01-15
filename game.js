@@ -15,7 +15,12 @@ function playGame(round) {
         if (humanScore > computerScore) {
             console.log("Congrats! You beat the computer");
         } else {
-            console.log("Oh no! You lost!");
+            if (humanScore==computerScore) {
+                console.log("You tied with the computer!");
+            } else {
+                console.log("Oh no! You lost!");
+            }
+
         }
     }
     //#region game code stuff
