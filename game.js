@@ -47,7 +47,7 @@ function playGame(round) {
         do {
             humanChoice = prompt("Do you choose rock, paper, or scissors?");
         } while (!(/^(Rock)|(Paper)|(Scissors)$/i.test(humanChoice)));
-
+        return humanChoice;
     }
     /* 
         this function will take in computer choice
