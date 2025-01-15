@@ -10,15 +10,15 @@ function playGame(round) {
     let computerScore = 0;
     if (typeof round === 'number' && round > 0) {
         for (let a = 0; a < round; a++) {
-            console.log(playRound(getHumanChoice(),getComputerChoice()));
+            alert(playRound(getHumanChoice(),getComputerChoice()));
         }
         if (humanScore > computerScore) {
-            console.log("Congrats! You beat the computer");
+            alert(`Congrats! You beat the computer! ${humanScore}-${computerScore}`);
         } else {
             if (humanScore==computerScore) {
-                console.log("You tied with the computer!");
+                alert("You tied with the computer!");
             } else {
-                console.log("Oh no! You lost the game!");
+                alert(`Oh no! You lost the game! ${humanScore}-${computerScore}`);
             }
 
         }
