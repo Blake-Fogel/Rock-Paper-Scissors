@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 /* 
     Get a random number between 0 inclusive and 3 exlusive
     Return "Rock", "Paper", or "Scissors" based on this number
