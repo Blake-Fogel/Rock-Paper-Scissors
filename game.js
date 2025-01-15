@@ -31,7 +31,7 @@ function playGame(round) {
             create an array object and index based on the provided random value
             the "| 0" is to truncate the floating point part
         */
-        return ["Rock","Paper","Scissors"][(Math.random() * 3) | 0]
+        return ["rock","paper","scissors"][(Math.random() * 3) | 0]
     }
     /* 
         Get human choice.
@@ -61,17 +61,22 @@ function playGame(round) {
             I am checking to see if the computer choice is that one case.
             If not, then the player loses.
         */
+       //check for tie
+       humanChoice = humanChoice.toLowerCase();
+       if (humanChoice===computerChoice) {
+            return "It's a draw!";
+       }
         function isComputerBeatable(beatableComputerChoice) {
             if (computerChoice===beatableComputerChoice) {
                 humanScore += 1;
-                return `You win! ${humanChoice}-${humanScore} beats ${computerChoice}-${computerScore}`;
+                return `You win! ${humanChoice} beats ${computerChoice}`;
             } else {
                 computerScore += 1;
-                return `You lose! ${humanChoice}-${humanScore} beats ${computerChoice}-${computerScore}`;
+                return `You lose! ${computerChoice} beats ${humanChoice}`;
             }
         }
         //pass in the correct beatable value for what the user chose
-        switch (humanChoice.toLowerCase()) {
+        switch (humanChoice) {
             case "rock":
                 return isComputerBeatable("scissors");
                 break;
