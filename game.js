@@ -4,7 +4,11 @@
     a passed in amount of rounds.
 */
 function playGame(round) {
-    if (typeof round === Number && round > 0) {
+    //number of correct guesses by human
+    let humanScore = 0;
+    //number of wrong guesses by human
+    let computerScore = 0;
+    if (typeof round === 'number' && round > 0) {
         for (let a = 0; a < round; a++) {
             console.log(playRound(getHumanChoice(),getComputerChoice()));
         }
@@ -15,10 +19,8 @@ function playGame(round) {
         }
     }
     //#region game code stuff
-    //number of correct guesses by human
-    let humanScore = 0;
-    //number of wrong guesses by human
-    let computerScore = 0;
+
+
 
     /* 
         Get a random number between 0 inclusive and 3 exlusive
@@ -82,4 +84,5 @@ function playGame(round) {
         }
     }
     //#endregion
+
 }
