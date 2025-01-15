@@ -1,4 +1,6 @@
+//number of correct guesses by human
 let humanScore = 0;
+//number of wrong guesses by human
 let computerScore = 0;
 
 /* 
