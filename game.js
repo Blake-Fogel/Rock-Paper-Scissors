@@ -18,7 +18,7 @@ function playGame(round) {
             if (humanScore==computerScore) {
                 console.log("You tied with the computer!");
             } else {
-                console.log("Oh no! You lost!");
+                console.log("Oh no! You lost the game!");
             }
 
         }
