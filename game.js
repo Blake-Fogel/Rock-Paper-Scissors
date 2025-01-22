@@ -15,6 +15,8 @@ function playGame(round) {
     let humanScore = 0;
     //number of wrong guesses by human
     let computerScore = 0;
+    //number of draws
+    let drawScore = 0;
     if (typeof round === 'number' && round > 0) {
         for (let a = 0; a < round; a++) {
             alert(playRound(getHumanChoice(),getComputerChoice()));
