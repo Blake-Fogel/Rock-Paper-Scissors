@@ -1,4 +1,11 @@
-
+let start_game_btn = document.querySelector(".start-game");
+//prompt user for round amount and start game
+start_game_btn.addEventListener('click',() => {
+    let amount = +prompt("How many rounds do you want to play?");
+    if (!isNaN(amount)) {
+        playGame(amount);
+    }
+});
 /* 
     This function will start a game that will play for
     a passed in amount of rounds.
