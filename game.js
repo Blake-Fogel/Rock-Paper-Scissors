@@ -18,7 +18,19 @@ function playGame(round) {
     //number of draws
     let drawScore = 0;
     if (typeof round === 'number' && round > 0) {
-
+        let height = start_game_btn.height;
+        start_game_btn.remove();
+        let scoreLabel = document.createElement('div');
+        scoreLabel.height = height;
+        scoreLabel.classList.add('score-label');
+        scoreLabel.style.fontSize = '30px';
+        scoreLabel.innerText = `${humanScore} - ${drawScore} - ${computerScore}`
+        document.querySelector('body').appendChild(scoreLabel);
+        let playerOptions = document.createElement('div');
+        playerOptions.classList.add('player-options');
+        let scissorsButton = document.createElement('button');
+        let rockButton = document.createElement('button');
+        let paperButton = document.createElement('button');
     }
     //#region game code stuff
 
