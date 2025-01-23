@@ -68,6 +68,7 @@ function playGame(round) {
     /* 
         this function will take in computer choice
         and human choice then determine who won
+        by returning a string saying so
     */
     function playRound(humanChoice, computerChoice) {
         /* 
