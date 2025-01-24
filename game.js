@@ -1,4 +1,5 @@
 let start_game_btn = document.querySelector(".start-game");
+let body = document.querySelector("body");
 //prompt user for round amount and start game
 start_game_btn.addEventListener('click',() => {
     let amount = +prompt("How many rounds do you want to play?");
@@ -29,8 +30,26 @@ function playGame(round) {
         let playerOptions = document.createElement('div');
         playerOptions.classList.add('player-options');
         let scissorsButton = document.createElement('button');
+            let scissorsImg = document.createElement('img');
+            scissorsImg.src = '/images/scissors.svg';
+            scissorsImg.style.height = '50px';
+            scissorsButton.appendChild(scissorsImg);
+            scissorsButton.style.marginRight = '10px';
         let rockButton = document.createElement('button');
+            let rockImg = document.createElement('img');
+            rockImg.src = '/images/rock.svg';
+            rockImg.style.height = '50px';
+            rockButton.appendChild(rockImg);
         let paperButton = document.createElement('button');
+            let paperImg = document.createElement('img');
+            paperImg.src = '/images/paper.svg';
+            paperImg.style.height = '50px';
+            paperButton.appendChild(paperImg);
+            paperButton.style.marginLeft = '10px';
+        playerOptions.appendChild(scissorsButton);
+        playerOptions.appendChild(rockButton);
+        playerOptions.appendChild(paperButton);
+        body.appendChild(playerOptions);
     }
     //#region game code stuff
 
