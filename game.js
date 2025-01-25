@@ -49,19 +49,6 @@ function playGame(round) {
     }
     //#region game code stuff
 
-    //display results message
-    function displayResultsMessage() {
-        if (humanScore > computerScore) {
-            alert(`Congrats! You beat the computer! ${humanScore}-${computerScore}`);
-        } else {
-            if (humanScore==computerScore) {
-                alert("You tied with the computer!");
-            } else {
-                alert(`Oh no! You lost the game! ${humanScore}-${computerScore}`);
-            }
-        }
-    }
-
     /* 
         Get a random number between 0 inclusive and 3 exlusive
         Return "Rock", "Paper", or "Scissors" based on this number
