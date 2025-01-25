@@ -7,6 +7,17 @@ start_game_btn.addEventListener('click',() => {
         playGame(amount);
     }
 });
+
+//make button method - cleaning up playGame code
+function makeButton(svgPath,parentContainer) {
+    let button = document.createElement('button');
+    let img = document.createElement('img');
+    img.src = svgPath;
+    img.style.height = '50px';
+    button.appendChild(img);
+    parentContainer.appendChild(button);
+    return button;
+}
 /* 
     This function will start a game that will play for
     a passed in amount of rounds.
@@ -28,27 +39,12 @@ function playGame(round) {
         scoreLabel.innerText = `${humanScore} - ${drawScore} - ${computerScore}`
         document.querySelector('body').appendChild(scoreLabel);
         let playerOptions = document.createElement('div');
+        playerOptions.style.display = 'flex';
+        playerOptions.style.gap = '10px';
         playerOptions.classList.add('player-options');
-        let scissorsButton = document.createElement('button');
-            let scissorsImg = document.createElement('img');
-            scissorsImg.src = '/images/scissors.svg';
-            scissorsImg.style.height = '50px';
-            scissorsButton.appendChild(scissorsImg);
-            scissorsButton.style.marginRight = '10px';
-        let rockButton = document.createElement('button');
-            let rockImg = document.createElement('img');
-            rockImg.src = '/images/rock.svg';
-            rockImg.style.height = '50px';
-            rockButton.appendChild(rockImg);
-        let paperButton = document.createElement('button');
-            let paperImg = document.createElement('img');
-            paperImg.src = '/images/paper.svg';
-            paperImg.style.height = '50px';
-            paperButton.appendChild(paperImg);
-            paperButton.style.marginLeft = '10px';
-        playerOptions.appendChild(scissorsButton);
-        playerOptions.appendChild(rockButton);
-        playerOptions.appendChild(paperButton);
+        makeButton('/images/scissors.svg',playerOptions);
+        makeButton('/images/rock.svg',playerOptions);
+        makeButton('/images/paper.svg',playerOptions);
         body.appendChild(playerOptions);
     }
     //#region game code stuff
