@@ -53,7 +53,6 @@ function playGame(round) {
     //number of draws
     let drawScore = 0;
     if (typeof round === 'number' && round > 0) {
-        let height = start_game_btn.height;
         start_game_btn.remove();
         let playerOptions = document.createElement('div');
         addScoreTracker(humanScore,drawScore,computerScore);
