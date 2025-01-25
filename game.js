@@ -37,7 +37,7 @@ function addScoreTracker(humanScore,drawScore,computerScore) {
     let computerScoreDiv = document.createElement('div');
     computerScoreDiv.innerText = computerScore;
     computerScoreDiv.classList.add("computer-score");
-    scoreLabel.append(humanScore,separator1,drawScore,separator2,computerScore);
+    scoreLabel.append(humanScoreDiv,separator1,drawScoreDiv,separator2,computerScoreDiv);
     document.querySelector('body').appendChild(scoreLabel);
 }
 
