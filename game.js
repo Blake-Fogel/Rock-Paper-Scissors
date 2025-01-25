@@ -18,6 +18,26 @@ function makeButton(svgPath,parentContainer) {
     parentContainer.appendChild(button);
     return button;
 }
+
+function addScoreTracker(humanScore,drawScore,computerScore) {
+    let scoreLabel = document.createElement('div');
+    scoreLabel.classList.add('score-label');
+    scoreLabel.style.fontSize = '30px';
+    scoreLabel.style.display = 'flex';
+    let humanScoreDiv = document.createElement('div');
+    humanScoreDiv.innerText = humanScore;
+    let separator1 = document.createElement('div');
+    separator1.innerText = '-';
+    let drawScoreDiv = document.createElement('div');
+    drawScoreDiv.innerText = drawScore;
+    let separator2 = document.createElement('div');
+    separator2.innerText = '-';
+    let computerScoreDiv = document.createElement('div');
+    computerScoreDiv.innerText = computerScore;
+    scoreLabel.append(humanScore,separator1,drawScore,separator2,computerScore);
+    document.querySelector('body').appendChild(scoreLabel);
+}
+
 /* 
     This function will start a game that will play for
     a passed in amount of rounds.
@@ -32,13 +52,8 @@ function playGame(round) {
     if (typeof round === 'number' && round > 0) {
         let height = start_game_btn.height;
         start_game_btn.remove();
-        let scoreLabel = document.createElement('div');
-        scoreLabel.height = height;
-        scoreLabel.classList.add('score-label');
-        scoreLabel.style.fontSize = '30px';
-        scoreLabel.innerText = `${humanScore} - ${drawScore} - ${computerScore}`
-        document.querySelector('body').appendChild(scoreLabel);
         let playerOptions = document.createElement('div');
+        addScoreTracker(humanScore,drawScore,computerScore);
         playerOptions.style.display = 'flex';
         playerOptions.style.gap = '10px';
         playerOptions.classList.add('player-options');
