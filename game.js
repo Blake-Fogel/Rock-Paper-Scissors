@@ -26,14 +26,17 @@ function addScoreTracker(humanScore,drawScore,computerScore) {
     scoreLabel.style.display = 'flex';
     let humanScoreDiv = document.createElement('div');
     humanScoreDiv.innerText = humanScore;
+    humanScoreDiv.classList.add("human-score");
     let separator1 = document.createElement('div');
     separator1.innerText = '-';
     let drawScoreDiv = document.createElement('div');
     drawScoreDiv.innerText = drawScore;
+    drawScoreDiv.classList.add("draw-score");
     let separator2 = document.createElement('div');
     separator2.innerText = '-';
     let computerScoreDiv = document.createElement('div');
     computerScoreDiv.innerText = computerScore;
+    computerScoreDiv.classList.add("computer-score");
     scoreLabel.append(humanScore,separator1,drawScore,separator2,computerScore);
     document.querySelector('body').appendChild(scoreLabel);
 }
