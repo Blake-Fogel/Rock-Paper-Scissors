@@ -9,12 +9,13 @@ start_game_btn.addEventListener('click',() => {
 });
 
 //make button method - cleaning up playGame code
-function makeButton(svgPath,parentContainer) {
+function makeButton(svgPath,parentContainer,className) {
     let button = document.createElement('button');
     let img = document.createElement('img');
     img.src = svgPath;
     img.style.height = '50px';
     button.appendChild(img);
+    button.classList.add(className);
     parentContainer.appendChild(button);
     return button;
 }
@@ -59,9 +60,19 @@ function playGame(round) {
         playerOptions.style.display = 'flex';
         playerOptions.style.gap = '10px';
         playerOptions.classList.add('player-options');
-        makeButton('/images/scissors.svg',playerOptions);
-        makeButton('/images/rock.svg',playerOptions);
-        makeButton('/images/paper.svg',playerOptions);
+        makeButton('/images/scissors.svg',playerOptions,"scissors");
+        makeButton('/images/rock.svg',playerOptions,"rock");
+        makeButton('/images/paper.svg',playerOptions,"paper");
+        playerOptions.addEventListener('click',(event) => {
+            switch (event.target.className) {
+                case "scissors":
+                    break;
+                case "rock":
+                    break;
+                case "paper":
+                    break;
+            }
+        });
         body.appendChild(playerOptions);
     }
     //#region game code stuff
