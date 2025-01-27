@@ -2,7 +2,7 @@ let start_game_btn = document.querySelector(".start-game");
 let body = document.querySelector("body");
 let scoreLabel = createScoreTracker();
 let resultLabel = document.createElement('div');
-resultLabel.fontSize = '16px';
+resultLabel.style.fontSize = '25px';
 //prompt user for round amount and start game
 start_game_btn.addEventListener('click',() => {
     let amount = +prompt("How many rounds do you want to play?");
